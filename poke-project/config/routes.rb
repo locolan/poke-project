@@ -1,4 +1,9 @@
 PokeProject::Application.routes.draw do
-  resources :teams, :pokemons, :users
-  root :to => "teams#index"
+  get "searches/search"
+
+  resources :users
+  
+  get "/search" => "searches#search"
+  
+  root :to => "users#index"
 end
