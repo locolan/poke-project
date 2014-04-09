@@ -1,7 +1,5 @@
 PokeProject::Application.routes.draw do
-  get "searches/search"
-
-  resources :users
+  resources :users, :logins
   
   get "/search" => "searches#search"
   

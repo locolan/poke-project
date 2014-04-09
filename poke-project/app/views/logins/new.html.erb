@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="login">
+  <h2>Log In</h2>
+
+    <% if @user %>
+     Username or password incorrect
+    <% end %>
+
+  <div id="login_form">
+    <ul id="login_fields">
+
+      <%= form_tag logins_path do %>
+
+    <li>
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+    </li>
+
+    <li>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </li>
+
+      <%= submit_tag "Log In", :class => 'button' %>
+
+      <% end %>
+
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
