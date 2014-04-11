@@ -1,0 +1,21 @@
+$(document).ready(function(){
+  
+
+  
+  $.ajax({
+    type: 'GET',      
+    url: 'http://pokeapi.co/api/v1/pokedex/1',
+    dataType: 'jsonp',
+    success: function(r){
+      $.ajax({
+        type: 'POST',
+        url: '/new_pokemon'
+        data: { pokemon: r.pokemon }
+      });
+    }
+  });
+
+
+
+
+});
