@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @pokemon = Pokemon.all
     @users = User.all
     @user = User.new
+    redirect_to(:root)
   end
 
   def create
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
        redirect_to(:root)
 
      else
-       render "new"
+       render "signup"
      end
   end
   
