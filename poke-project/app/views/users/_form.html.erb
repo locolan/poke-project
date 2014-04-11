@@ -1,5 +1,5 @@
-<%= form_tag("/search", method: "get", :remote => :true) do %>
+<%= form_tag("/search", method: "get", :remote => :true, :id => "search") do %>
   <%= label_tag(:query, "Search for pokemon:") %>
-  <%= text_field_tag(:query) %>
+  <%= text_field_tag(:query, nil, :placeholder => "Pokemon 1") %>
   <%= submit_tag("Search") %>
 <% end %>

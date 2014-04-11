@@ -1,4 +1,16 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+.search{
+  display:inline-block;
+  float:left;
+  margin:auto;
+}
+
+.result{
+  width:150px;
+}
+.result li{
+  display:inline-block;
+  float:left;
+  margin:auto;
+  width:150px;
+  padding:0;
+}
