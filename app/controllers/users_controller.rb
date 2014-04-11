@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
     if params[:id].to_s == session[:user_id].to_s
     else
-      redirect_to profile_url params[:id].to_i
+      #redirect_to profile_url params[:id].to_i
     end
     
     
