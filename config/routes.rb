@@ -5,5 +5,7 @@ PokeProject::Application.routes.draw do
   
   get "/get_pokemon" => "teams#get_pokemon"
   
+  get "/signup" => "users#signup"
+  
   root :to => "users#index"
 end

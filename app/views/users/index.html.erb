@@ -6,7 +6,7 @@
   <div id="signup" class="clearfix">
     <div id="hp_form" class="clearfix">
       <% if !current_user %>
-      <%= render :partial => "signup" %>
+      <%= link_to("Sign up here", "/signup") %>
       <% else %>
       <p><%= link_to(current_user.username + "'s crazy awesome teams!", user_url(current_user.id)) %></p>
       <% end %>

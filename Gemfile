@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.17'
 gem 'pokegem'
-
+ruby '1.9.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -11,6 +11,7 @@ gem 'json'
 gem 'httparty'
 gem 'typhoeus'
 
+gem 'rails_12factor'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 # Gems used only for assets and not required
@@ -43,3 +44,7 @@ gem 'unicorn'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'aws-sdk'
+gem 'aws-s3'
+gem 's3'
