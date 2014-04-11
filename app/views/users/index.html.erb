@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body id="index">
+  <div id="signup">
+    <div id="hp_form">
+      <% if !current_user %>
+      <%= render :partial => "signup" %>
+      <% else %>
+      <p><%= current_user.username %>,<%= link_to("see your teams >", user_url(current_user.id)) %></p>
+      <% end %>
+    </div> 
+  </div>
+  <% if current_user %>
+  <h1>Pokmon</h1>
+  <div id="search">
+    <%= render :partial => "form" %>
+    <ul class="result p1">
+      
+    </ul>
+  </div>
+  <% end %>
+</body>
+</html>

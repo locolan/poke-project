@@ -1,0 +1,10 @@
+<%= form_tag("/search", method: "get", :remote => :true, :id => "search") do %>
+  <% i = 1 %>
+  <% while i <= 6 %>
+    <%= label_tag(:query, i) %>
+    <%= text_field_tag(:query, nil , :placeholder => "Pokemon #{i}") %>
+    <% i += 1 %>
+  <% end %>
+  
+  <%= submit_tag("Search") %>
+<% end %>
