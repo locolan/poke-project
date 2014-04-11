@@ -32,6 +32,13 @@ class TeamsController < ApplicationController
   end
   
   def show
+    @team = Team.find(params[:id])
+  end
+  
+  def edit
+    @team = Team.find(params[:id])
+    @team.name = params[:name]
+    @team.save
   end
   
   def get_pokemon

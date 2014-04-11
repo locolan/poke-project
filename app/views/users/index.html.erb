@@ -3,23 +3,26 @@
 <head>
 </head>
 <body id="index">
-  <div id="signup">
-    <div id="hp_form">
+  <div id="signup" class="clearfix">
+    <div id="hp_form" class="clearfix">
       <% if !current_user %>
       <%= render :partial => "signup" %>
       <% else %>
-      <p><%= current_user.username %>,<%= link_to("see your teams >", user_url(current_user.id)) %></p>
+      <p><%= link_to(current_user.username + "'s crazy awesome teams!", user_url(current_user.id)) %></p>
       <% end %>
     </div> 
   </div>
-  <% if current_user %>
-  <h1>Pokmon</h1>
-  <div id="search">
+  
+  <div id="search_header" class="clearfix">
+    Pokemon Search
+  </div>
+  
+  <div id="search" class="clearfix">
     <%= render :partial => "form" %>
     <ul class="result p1">
       
     </ul>
   </div>
-  <% end %>
+
 </body>
 </html>

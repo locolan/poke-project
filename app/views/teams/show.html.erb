@@ -1,14 +1,26 @@
 <div class="team">
+  
+  <div id="team_header" class="clearfix">
+    <% if @team.name %>
+  
+    <%= "Team " + @team.name %>
 
-  <div id="r1" class="team_row">
-    <ul class="result p1"></ul>
-    <ul class="result p2"></ul>
-    <ul class="result p3"></ul>
+    <% else %>
+  
+    <%= render :partial => "form", :locals => {:team_id => params[:id]}%>
+  
+    <% end %>  
   </div>
   
-  <div id="r2" class="team_row">
-    <ul class="result p4"></ul>
-    <ul class="result p5"></ul>
-    <ul class="result p6"></ul>
+  <div id="r1" class="clearfix">
+    <ul class="result p1 clearfix"></ul>
+    <ul class="result p2 clearfix"></ul>
+    <ul class="result p3 clearfix"></ul>
+  </div>
+  
+  <div id="r2" class="clearfix">
+    <ul class="result p4 clearfix"></ul>
+    <ul class="result p5 clearfix"></ul>
+    <ul class="result p6 clearfix"></ul>
   </div>
 </div>

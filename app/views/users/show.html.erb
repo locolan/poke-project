@@ -8,11 +8,11 @@
     
     
     
-    <div id="search">
+    <div id="search" class="clearfix">
       <h1>New Team</h2>
         <div id="form">
           <%= render :partial => "new_team"%>
-          <button id="save">Save Team</button>
+          
         </div>
         <ul class="result p1">
 
@@ -40,6 +40,23 @@
     
       </div>
   
+    </div>
+    <div id = "show_teams" class="clearfix">
+
+      <p><%= @user.username %>'s Teams:</p>
+
+      <div id  = "teams_index_list">
+        <% @user.teams.each do |team| %>
+        <li>
+
+
+          <%= link_to(team.id, team_path(team.id)) %>
+ 
+
+        </li>
+        <% end %>
+      </div>
+      
     </div>
   </body>
   </html>

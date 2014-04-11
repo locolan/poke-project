@@ -14,3 +14,51 @@
   width:150px;
   padding:0;
 }
+
+
+
+#form{
+  width:35%;
+}
+
+
+
+#search{
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  display: block;
+  float: left;
+  margin-left:40px;
+/*  margin-top:40px;*/
+}
+
+#search_header{
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin-left:40px;
+  margin-top:20px;
+}
+
+#show_teams{
+  display:block;
+  float:left;
+  color:#000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  padding:0;
+  margin-left:20px;
+  margin-top:40px;
+  width:20px;
+}
+
+#show_teams li{
+  display:inline-block;
+  float:left;
+  padding:2px;
+  margin:auto;
+  text-decoration: none;
+}
+

@@ -5,21 +5,24 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <title>Pokemon!</title>
-  <div id="header">
-    <%= link_to "POK MON", :root, :id => "header"%> 
+  <div id="navbar">
+    <div id="header">
+      <%= link_to "POK MON", :root, :id => "header"%> 
+    </div>
+    <div id="login_box">
+      <% if current_user %>
+      <div id="profile_manage">
+      <%= link_to("Profile", user_url(current_user.id)) %> |
+      <%= link_to("Log Out", login_path(current_user.id), :method => :delete) %>
+      </div>
+      <% else %>
+      
+      <!-- <a href="#"><%= link_to("Sign Up", :new_user) %></a> |  -->
+      <%= link_to("Log In", :new_login) %>
+  
+      <% end %>
+    </div>
   </div>
-  <div id="login_box">
-    <% if current_user %>
-    <%= link_to("Profile", user_url(current_user.id)) %> |
-    <%= link_to("Log Out", login_path(current_user.id), :method => :delete) %>
-    <% else %>
-  
-    <!-- <a href="#"><%= link_to("Sign Up", :new_user) %></a> |  -->
-    <%= link_to("Log In", :new_login) %>
-  
-    <% end %>
-  </div>
-  
 </head>
 <body>
 
