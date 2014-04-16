@@ -1,32 +1,27 @@
 class UsersController < ApplicationController
   def index
-    @pokemon = Pokemon.all
-    @users = User.all
     @user = User.new
   end
   
   def new
-     @user = User.new
+    @user = User.new
   end
   
   def signup
-    @pokemon = Pokemon.all
-    @users = User.all
-    @user = User.new
-    redirect_to(:root)
+    redirect_to :root
   end
 
   def create
-     @user = User.new(params[:user])
+    @user = User.new(params[:user])
     
-     if @user.save
-       session[:user_id] = @user.id # <- This is all "auto-login" is. Ha.
+    if @user.save
+      session[:user_id] = @user.id # <- This is all "auto-login" is. Ha.
       
-       redirect_to(:root)
+      redirect_to(:root)
 
-     else
-       render "signup"
-     end
+    else
+      render "signup"
+    end
   end
   
   def show

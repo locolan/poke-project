@@ -3,24 +3,21 @@
 <head>
 </head>
 <body id="index">
+  <div id="search_container" class="clearfix">
+    <div id="search_header" class="clearfix">
+      Pokemon Search
+    </div>
+    <%= render :partial => "form" %>
+
+  </div>
+  
+  <% if !current_user %>
   <div id="signup" class="clearfix">
     <div id="hp_form" class="clearfix">
-      <% if !current_user %>
-      <%= link_to("Sign up here", "/signup") %>
-      <% end %>
+      <%= render :partial => "signup" %>
     </div> 
   </div>
-  
-  <div id="search_header" class="clearfix">
-    Pokemon Search
-  </div>
-  
-  <div id="search" class="clearfix">
-    <%= render :partial => "form" %>
-    <ul class="result p1">
-      
-    </ul>
-  </div>
-
+  <% end %>
+    
 </body>
 </html>

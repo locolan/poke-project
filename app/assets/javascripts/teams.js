@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  if($(".team").length !== 0){
+  if($(".team").length > 0){
     $.ajax({
       type: 'GET',
       url: '/get_pokemon',
@@ -19,6 +19,7 @@ $(document).ready(function(){
           console.log(requestURL);
           console.log(currentPokemon.name);
           $.ajax({
+            async:false,
             type: 'GET',
             url: '/search',
             dataType: 'json',
@@ -44,21 +45,19 @@ $(document).ready(function(){
               console.log(imageURL);
               console.log(currentPokemon.name)
               
-              
-              $(".p"+currentElement).append("<li><img alt='" + r.name + "' src='"+ imageURL +"'></img></li>" +
+              $("#p"+currentElement).append("<li><img alt='" + r.name + "' src='"+ imageURL +"'></img></li>" +
               "<li>Name: " + currentPokemon.name + "</li>" +
               species + 
               type +
-              "<li>Weight: " + currentPokemon.weight + "pounds</li>" +
+              "<li>Weight: " + currentPokemon.weight + " pounds</li>" +
               evolution +
               "<li>Stats: </li>" +
-              "<li>Attack:" + "      " + currentPokemon.attack + "</li>" +
-              "<li>Sp. Attack:"+ "  " + currentPokemon.sp_atk + "</li>" +
-              "<li>HP:"+ "          " + currentPokemon.hp + "</li>" +
-              "<li>Defense:"+ "     " + currentPokemon.defense + "</li>" +   
-              "<li>Sp. Defense:"+" " + currentPokemon.sp_def + "</li>" +
-              "<li>Speed:"+ "       " + currentPokemon.speed + "</li>" +
-              "<li>Total:"+ "       " + totalStats + "</li>" 
+              "<li>Attack:" + currentPokemon.sp_atk + "</li>" +
+              "<li>HP:"+ currentPokemon.hp + "</li>" +
+              "<li>Defense: " + currentPokemon.defense + "</li>" +   
+              "<li>Sp. Defense:"+ currentPokemon.sp_def + "</li>" +
+              "<li>Speed:"+ currentPokemon.speed + "</li>" +
+              "<li>Total:"+ totalStats + "</li>" 
             );                   
           }
         });

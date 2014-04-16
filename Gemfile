@@ -45,6 +45,17 @@ gem 'unicorn'
 # To use debugger
 # gem 'debugger'
 
+gem 'rack-mini-profiler'
+
 gem 'aws-sdk'
 gem 'aws-s3'
 gem 's3'
+
+group :development, :test do
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  # gem 'capybara-webkit'
+  gem 'launchy'
+end

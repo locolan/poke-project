@@ -15,43 +15,80 @@
   padding:0;
 }
 
+.profile{
+  background-color:#FFEAAD;
+}
 
+#index{
+  background-color:#FFEAAD;
+}
+
+#signup{
+  background-color:#FFEAAD;
+  
+}
 
 #form{
   width:35%;
 }
 
+#search_container{
+  display: block;
+  float: left;
 
+  border:0px solid;
+  border-radius: 5px;
+  
+  background-color:#028F76;
+  
+  padding-left:40px;
+  margin-top:40px;
+  
+  width: 100%;
+}
+
+#search_container ul{
+  display: block;
+  float: left;
+  
+  width: 16%;
+  
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  
+  padding: 0;
+  list-style-type: none;
+  
+}
 
 #search{
   color: #000;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   text-decoration: none;
-  display: block;
-  float: left;
-  margin-left:40px;
-/*  margin-top:40px;*/
+  
 }
 
 #search_header{
   color: #000;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
-  margin-left:40px;
-  margin-top:20px;
 }
 
 #show_teams{
   display:block;
   float:left;
-  color:#000;
+  color:#FFF;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   padding:0;
-  margin-left:20px;
-  margin-top:40px;
-  width:20px;
+  padding-left: 20px;
+  margin-top: 40px;
+  width: 100%;
+  background-color: #000;
+  padding-bottom: 40px;
 }
 
 #show_teams li{
@@ -59,10 +96,17 @@
   float:left;
   padding:2px;
   margin:auto;
-  text-decoration: none;
+  
+}
+
+#show_teams li a{
+  color:#FFF;
+/*  text-decoration: none;*/
 }
 
 #signup{
 
   margin-left: 40px;
 }
+
+

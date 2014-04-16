@@ -42,22 +42,12 @@ class TeamsController < ApplicationController
   end
   
   def get_pokemon
-    @team = Team.find(params[:team_id]) 
-    r = 
-    {
-      :p1 => JSON.parse(pokeserver(@team.p1)), 
-      :p2 => JSON.parse(pokeserver(@team.p2)), 
-      :p3 => JSON.parse(pokeserver(@team.p3)), 
-      :p4 => JSON.parse(pokeserver(@team.p4)), 
-      :p5 => JSON.parse(pokeserver(@team.p5)), 
-      :p6 => JSON.parse(pokeserver(@team.p6))  
-    }
-    
-    result = JSON.generate(r)
+    team = Team.find(params[:team_id]) 
+    result = team.get_pokemon_JSON
     
     respond_to do |format|
-          format.json { render json: result, :status => :ok }
-        end
+      format.json { render json: result, :status => :ok }
+    end
     # r = []
     # @team.attributes.each_pair do |name, value|
     #   if name == "p1" || "p2" || "p3" || "p4" || "p5" || "p6"
@@ -72,10 +62,6 @@ class TeamsController < ApplicationController
     # end
   end
   
-  def pokeserver(p)
-    pokemon_path = Pokemon.where("name LIKE ?", "%#{p.downcase}%")[0].resource_uri
-    
-    return result = Pokegem.get("pokemon",pokemon_path[15,pokemon_path.length-16].to_i)
-  end
+
   
 end

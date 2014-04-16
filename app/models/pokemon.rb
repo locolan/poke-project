@@ -12,9 +12,7 @@ class Pokemon < ActiveRecord::Base
 
     pokemon_data = JSON.generate(response)
     pokemon_data = JSON.parse(pokemon_data)
-    
-    # puts pokemon_data
-    
+
     pokemon_data.map do |data|
       
       data['pokemon'].each do |p|
