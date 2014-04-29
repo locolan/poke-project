@@ -76,37 +76,35 @@ $(document).ready(function(){
     var query;
     var pokemon_arr = [];
     $("ul").remove();
-    if($("[placeholder='Pokemon 1']").val().toLowerCase() === "mr pickles" || "mrpickles" || "mr. pickles"){
-      $("#search_container").append("<ul><img src='pickles.png'>mr pickles<img></ul>");
-    } else {
-      for(var i = 1; i <= 6; i++){
-        query = $("[placeholder='Pokemon " + i + "']").val().toLowerCase();
+   
+    for(var i = 1; i <= 6; i++){
+      query = $("[placeholder='Pokemon " + i + "']").val().toLowerCase();
       
-        console.log(query);
+      console.log(query);
         
-        $.ajax({
-          async: false,
-          type: 'GET',
-          url: "/search",
-          dataType: 'json',
-          data: {name: query, resource: 'pokemon'},
-          timeout: 3000,
-          success: function(data){
-            pokemon_arr[i] = data;
+      $.ajax({
+        async: false,
+        type: 'GET',
+        url: "/search",
+        dataType: 'json',
+        data: {name: query, resource: 'pokemon'},
+        timeout: 3000,
+        success: function(data){
+          pokemon_arr[i] = data;
         
-          },
-          error: function(data, textStatus, errorThrown){
-            console.log(errorThrown);
-          }
-        });
-        if($("#index").length > 0){
-          break;
+        },
+        error: function(data, textStatus, errorThrown){
+          console.log(errorThrown);
         }
-        if(i === 6){
-          break;
-        }
+      });
+      if($("#index").length > 0){
+        break;
+      }
+      if(i === 6){
+        break;
       }
     }
+    
     appendPokemon(pokemon_arr);
     event.preventDefault();                               
   }); 

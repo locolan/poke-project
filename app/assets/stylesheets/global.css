@@ -39,7 +39,10 @@ body{
   
   background: url('pokmon_logo.png') no-repeat;
   height: 156px;
-  width: 100%;
+  width: 64%;
+  
+  overflow: hidden;
+  
   padding-top:10px;
 /*  padding-left:5px;*/
   margin-left: 20px;

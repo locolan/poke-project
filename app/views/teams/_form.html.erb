@@ -1,4 +1,4 @@
-<%= form_tag("/teams/edit", method: "get", :remote => :true, :id => "search") do %>
+<%= form_tag("/teams/edit", method: "get", :remote => :true, :id => "name_team") do %>
   <%= label_tag(:name, "Enter a name for your team: Team") %>
   <%= text_field_tag(:name, nil, :placeholder => "Team Name Here") %>
   <%= hidden_field_tag "id", team_id %>
